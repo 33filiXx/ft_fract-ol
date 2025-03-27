@@ -1,23 +1,29 @@
-NAME = libft.a
+NAME = fractol
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
+LIB = ./libft/libft.a
 
-SRCS = fract-ol_42/pars/parsing.c
+SRCS =  fract-ol_42/src/main.c
 
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	ar rcs -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME) $(OBJS)
+$(LIB):
+	$(MAKE) -C libft/
+
+$(NAME): $(OBJS) $(LIB)
+	$(CC) $(OBJS) -L./minilibx-linux -lmlx -L/usr/lib -lXext -lX11 -lm -lz $(LIB) -o $(NAME)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -Imlx -c $< -o $@
+	$(CC) $(CFLAGS) -Iminilibx-linux -O3 -c $< -o $@
 
 clean:
-	rm -f $(OBJS) 
+	rm -f $(OBJS)
+	$(MAKE) clean -C libft/ 
 
 fclean: clean
+	$(MAKE) fclean -C libft/
 	rm -f $(NAME)
 
 re: fclean all 
