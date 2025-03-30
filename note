@@ -1,6 +1,7 @@
 1 - undstand minilabX - > hooks and open a windows and stuff
 2 - do somme code with it
-
+3 - do the parse
+4 - undrstand the algho
 
 
 
@@ -47,3 +48,10 @@ int	main(void)
 	mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
 	mlx_loop(mlx);
 }
+
+
+
+
+
+
+
