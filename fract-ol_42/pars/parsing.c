@@ -15,12 +15,20 @@ int		ft_strcmp(char *s1, char *s2)
 
 
 
-int pars(char **str)
+int pars(char **str , int argc,t_fractol *f)
 {
 	int check = 0;
     if (ft_strcmp(str[1] , "Mandelbrot") == 0 && str[2] == NULL)
+	{
 		check = 1;
-	if (ft_strcmp(str[1] , "Julia") == 0)
+		f->fractal_type = 1;
+	}
+	if (ft_strcmp(str[1] , "Julia") == 0 && argc == 4)
+	{
 		check = 1;
+		f->fractal_type = 2;
+		f->jr = ft_atoi(str[2]);
+		f->ji = ft_atoi(str[3]);
+	}
 	return check;
 }

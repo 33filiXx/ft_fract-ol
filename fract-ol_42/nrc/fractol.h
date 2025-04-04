@@ -7,6 +7,12 @@
 # include "../../minilibx-linux/mlx.h"
 # include "../../libft/libft.h"
 
+
+#define WIDTH 800
+#define HEIGHT 800
+#define MAX_ITER 150
+#define JULIA_MAX_ITER 50
+
 typedef struct s_data
 {
 	void	*img;
@@ -14,6 +20,7 @@ typedef struct s_data
 	int		bits_per_pixel;
 	int		line_length;
 	int		endian;
+  
 }			t_data;
 
 typedef struct s_fractol
@@ -26,6 +33,9 @@ typedef struct s_fractol
     double  x_max;
     double  y_min;
     double  y_max;
+    double	zoom;
+	double	x_offset;
+	double	y_offset;
     
 	int color;
     int     max_iter;
@@ -33,6 +43,8 @@ typedef struct s_fractol
     
     double  cr;            // Julia constant real part (if needed)
     double  ci;            // Julia constant imaginary part
+    double  ji;            // Julia constant imaginary part
+    double  jr;            // Julia constant imaginary part
 }   t_fractol;
 
 typedef struct	s_vars {
@@ -40,7 +52,7 @@ typedef struct	s_vars {
 	void	*win;
 }		t_vars;
 
-int pars(char **str );
+int pars(char **str , int argc,t_fractol *f);
 
 
 #endif
