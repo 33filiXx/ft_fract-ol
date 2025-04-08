@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parsing.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wel-mjiy <wel-mjiy@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/08 17:21:05 by wel-mjiy          #+#    #+#             */
+/*   Updated: 2025/04/08 17:27:10 by wel-mjiy         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../nrc/fractol.h"
 
 int	ft_strcmp(char *s1, char *s2)
@@ -11,6 +23,7 @@ int	ft_strcmp(char *s1, char *s2)
 	}
 	return (s1[i] - s2[i]);
 }
+
 int	skip(char *s, long *sign)
 {
 	int	i;
@@ -29,8 +42,8 @@ int	skip(char *s, long *sign)
 
 double	ft_atof(char *s)
 {
-	long(int_part), (i), (sign);
-	double(pow), (fracti_part);
+	long (int_part), (i), (sign);
+	double (pow), (fracti_part);
 	int_part = 0;
 	fracti_part = 0;
 	sign = 1;
@@ -52,7 +65,9 @@ double	ft_atof(char *s)
 
 int	pars(char **str, int argc, t_fractol *f)
 {
-	int check = 0;
+	int	check;
+
+	check = 0;
 	if (ft_strcmp(str[1], "mandelbrot") == 0 && str[2] == NULL)
 	{
 		check = 1;

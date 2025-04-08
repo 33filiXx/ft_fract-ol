@@ -25,7 +25,8 @@ clean:
 	$(MAKE) clean -C libft/ 
 
 fclean: clean
-	$(MAKE) fclean -C libft/ 
+	$(MAKE) fclean -C libft/
+	rm -f $(NAME)
 
 re: fclean all 
 

@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   render.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wel-mjiy <wel-mjiy@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/08 17:21:15 by wel-mjiy          #+#    #+#             */
+/*   Updated: 2025/04/08 17:32:16 by wel-mjiy         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../nrc/fractol.h"
 
@@ -8,6 +19,7 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
 	*(unsigned int *)dst = color;
 }
+
 int	get_color(int i, int max_iter)
 {
 	double	t;
@@ -71,8 +83,8 @@ int	julia(double zr, double zi, double jr, double ji)
 
 void	rander_fractol(t_fractol *f)
 {
-	double(x_range), (y_range);
-	int(x), (y);
+	double (x_range), (y_range);
+	int (x), (y);
 	x_range = f->x_max - f->x_min;
 	y_range = f->y_max - f->y_min;
 	y = 0;

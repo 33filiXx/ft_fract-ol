@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   hooks.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wel-mjiy <wel-mjiy@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/08 17:21:10 by wel-mjiy          #+#    #+#             */
+/*   Updated: 2025/04/08 17:28:07 by wel-mjiy         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../nrc/fractol.h"
 
 int	mouse_hook(int button, int x, int y, void *param)
 {
 	t_fractol	*f;
 
-	double(scale), (range_x), (range_y);
+	double (scale), (range_x), (range_y);
 	f = (t_fractol *)param;
 	if (button == 4)
 		scale = 0.85;
@@ -31,12 +43,12 @@ int	mouse_hook(int button, int x, int y, void *param)
 int	key_hook(int keycode, t_fractol *fractol)
 {
 	if (keycode == 65307)
-		cleanup_and_exit(fractol);
+		cleanup_and_exit(fractol, 0);
 	return (0);
 }
 
 int	close_window(t_fractol *fractol)
 {
-	cleanup_and_exit(fractol);
+	cleanup_and_exit(fractol, 0);
 	return (0);
 }

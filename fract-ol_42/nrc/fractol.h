@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fractol.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wel-mjiy <wel-mjiy@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/08 17:20:46 by wel-mjiy          #+#    #+#             */
+/*   Updated: 2025/04/08 17:23:54 by wel-mjiy         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
@@ -61,6 +73,6 @@ void		my_mlx_pixel_put(t_data *data, int x, int y, int color);
 int			ft_strcmp(char *s1, char *s2);
 int			skip(char *s, long *sign);
 double		ft_atof(char *s);
-void		cleanup_and_exit(t_fractol *fractol);
+void		cleanup_and_exit(t_fractol *fractol, int set);
 
 #endif
