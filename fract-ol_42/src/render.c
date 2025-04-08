@@ -1,6 +1,13 @@
 
 #include "../nrc/fractol.h"
 
+void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
+{
+	char	*dst;
+
+	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
+	*(unsigned int *)dst = color;
+}
 int	get_color(int i, int max_iter)
 {
 	double	t;
@@ -66,7 +73,6 @@ void	rander_fractol(t_fractol *f)
 {
 	double(x_range), (y_range);
 	int(x), (y);
-
 	x_range = f->x_max - f->x_min;
 	y_range = f->y_max - f->y_min;
 	y = 0;

@@ -36,6 +36,8 @@ typedef struct s_fractol
 	double	zoom;
 	double	x_offset;
 	double	y_offset;
+	double	mx;
+	double	my;
 
 	int		color;
 	int		max_iter;
@@ -47,14 +49,8 @@ typedef struct s_fractol
 	double	jr;
 }			t_fractol;
 
-typedef struct s_vars
-{
-	void	*mlx;
-	void	*win;
-}			t_vars;
-
 int			pars(char **str, int argc, t_fractol *f);
-int	        mouse_hook(int button, int x, int y, void *param);
+int			mouse_hook(int button, int x, int y, void *param);
 int			key_hook(int keycode, t_fractol *f);
 int			close_window(t_fractol *f);
 int			get_color(int i, int max_iter);
@@ -65,5 +61,6 @@ void		my_mlx_pixel_put(t_data *data, int x, int y, int color);
 int			ft_strcmp(char *s1, char *s2);
 int			skip(char *s, long *sign);
 double		ft_atof(char *s);
+void		cleanup_and_exit(t_fractol *fractol);
 
 #endif
