@@ -3,7 +3,8 @@
         "numbers": "c",
         "fractol.h": "c",
         "stddef.h": "c",
-        "libft.h": "c"
+        "libft.h": "c",
+        "sstream": "c"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
