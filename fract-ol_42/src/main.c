@@ -6,7 +6,7 @@
 /*   By: wel-mjiy <wel-mjiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 17:20:40 by wel-mjiy          #+#    #+#             */
-/*   Updated: 2025/04/08 17:31:17 by wel-mjiy         ###   ########.fr       */
+/*   Updated: 2025/04/09 22:23:33 by wel-mjiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	cleanup_and_exit(t_fractol *fractol, int set)
 
 void	set_data(t_fractol *fractol)
 {
-	if (fractol->fractal_type == 1)
+	if (fractol->fractal_type == 1 || fractol->fractal_type == 3)
 	{
 		fractol->x_min = -2.0;
 		fractol->x_max = 1.0;
@@ -46,7 +46,7 @@ void	set_data(t_fractol *fractol)
 		fractol->y_max = 1.5;
 		fractol->max_iter = 50;
 	}
-	else
+	else if (fractol->fractal_type == 2)
 	{
 		fractol->x_min = -2.0;
 		fractol->x_max = 2.0;
@@ -94,6 +94,7 @@ int	main(int argc, char *argv[])
 		{
 			write(2, "Usage: ./fractol mandelbrot\n.", 30);
 			write(2, "/fractol julia <RealPart> <ImagPart>", 37);
+			write(2, "/fractol burningship",21);
 			exit(1);
 		}
 		check_mlx(&fractol);
@@ -103,6 +104,7 @@ int	main(int argc, char *argv[])
 	{
 		write(2, "Usage: ./fractol mandelbrot\n.", 30);
 		write(2, "/fractol julia <RealPart> <ImagPart>", 37);
+		write(2, "/fractol burningship",21);
 	}
 	return (0);
 }

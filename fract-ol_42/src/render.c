@@ -6,7 +6,7 @@
 /*   By: wel-mjiy <wel-mjiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 17:21:15 by wel-mjiy          #+#    #+#             */
-/*   Updated: 2025/04/08 17:32:16 by wel-mjiy         ###   ########.fr       */
+/*   Updated: 2025/04/09 23:01:44 by wel-mjiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,30 @@ int	julia(double zr, double zi, double jr, double ji)
 		return (0x000000);
 	return (get_color(i, JULIA_MAX_ITER));
 }
+int	burningship(double cr, double ci, int max_iter)
+{
+	double	zr;
+	double	zi;
+	int		i;
+	double	tmp;
 
+	zr = 0.0;
+	zi = 0.0;
+	i = 0;
+	while (i < max_iter)
+	{
+		tmp = zr * zr - zi * zi + cr;
+		zi = fabs(2.0 * zr * zi + ci);
+		zr = fabs(tmp);
+		if ((zr * zr + zi * zi) > 4.0)
+			break ;
+		i++;
+	}
+	if (i == max_iter)
+		return (0x000000);
+	else
+		return (get_color(i, max_iter));
+}
 void	rander_fractol(t_fractol *f)
 {
 	double (x_range), (y_range);
@@ -94,13 +117,13 @@ void	rander_fractol(t_fractol *f)
 		while (x < WIDTH)
 		{
 			f->cr = f->x_min + (x / (double)WIDTH) * x_range;
-			f->ci = f->y_min + (y / (double)HEIGHT) * y_range;
+			f->ci = f->y_min + (y / (double)HEIGHT) * y_range;   
 			if (f->fractal_type == 1)
-			{
 				f->color = mandelbrot(f->cr, f->ci, f->max_iter);
-			}
-			else
+			else if (f->fractal_type == 2)
 				f->color = julia(f->cr, f->ci, f->jr, f->ji);
+			else if (f->fractal_type == 3)
+				f->color = burningship(f->cr, f->ci, f->max_iter);
 			my_mlx_pixel_put(&f->img, x, y, f->color);
 			x++;
 		}

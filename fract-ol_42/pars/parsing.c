@@ -6,7 +6,7 @@
 /*   By: wel-mjiy <wel-mjiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 17:21:05 by wel-mjiy          #+#    #+#             */
-/*   Updated: 2025/04/09 21:14:23 by wel-mjiy         ###   ########.fr       */
+/*   Updated: 2025/04/09 21:47:07 by wel-mjiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,11 +62,25 @@ double	ft_atof(char *s)
 	}
 	return ((int_part + fracti_part) * sign);
 }
+int check_ponit(char **str)
+{
+	int i;
+	int j;
 
+	i = 0;
+	j = 0;
+	if (str[i][j] == '-' || str[i][j] == '+')
+			j++;
+		if (str[i][j] == '.') 
+			return (0);
+	return 1;
+}
 int	check_if_digit(char **str)
 {
 	int (i), (counterm), (counterpl), (counterp), (j);
 	i = 0;
+	if (check_ponit(str) == 0)
+		return 0;
 	while (str[i])
 	{
 		counterp = 0;
@@ -112,6 +126,11 @@ int	pars(char **str, int argc, t_fractol *f)
 		}
 		else
 			return (check);
+	}
+	else if (ft_strcmp(str[1], "burningship") == 0 && str[2] == NULL)
+	{
+		check = 1;
+		f->fractal_type = 3;
 	}
 	return (check);
 }

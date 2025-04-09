@@ -4,7 +4,7 @@ CFLAGS = -Wall -Wextra -Werror
 LIB = ./libft/libft.a
 
 
-SRCS =  fract-ol_42/src/main.c fract-ol_42/pars/parsing.c fract-ol_42/src/hooks.c fract-ol_42/src/render.c
+SRCS =  fract-ol_42/src/main.c fract-ol_42/pars/parsing.c fract-ol_42/src/hooks.c fract-ol_42/src/render.c fract-ol_42/src/nmap.c
 
 OBJS = $(SRCS:.c=.o)
 
