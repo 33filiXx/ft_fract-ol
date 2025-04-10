@@ -6,7 +6,7 @@
 /*   By: wel-mjiy <wel-mjiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 17:20:46 by wel-mjiy          #+#    #+#             */
-/*   Updated: 2025/04/09 21:42:46 by wel-mjiy         ###   ########.fr       */
+/*   Updated: 2025/04/10 15:53:42 by wel-mjiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,5 +75,7 @@ int			skip(char *s, long *sign);
 double		ft_atof(char *s);
 void		cleanup_and_exit(t_fractol *fractol, int set);
 int			burningship(double cr, double ci, int max_iter);
+void		check_ponit(char **str);
+int			check_p_m(char *str);
 
 #endif

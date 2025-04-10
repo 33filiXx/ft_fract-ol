@@ -6,7 +6,7 @@
 /*   By: wel-mjiy <wel-mjiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 17:20:40 by wel-mjiy          #+#    #+#             */
-/*   Updated: 2025/04/09 22:23:33 by wel-mjiy         ###   ########.fr       */
+/*   Updated: 2025/04/10 15:39:17 by wel-mjiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,8 +93,8 @@ int	main(int argc, char *argv[])
 		if (pars(argv, argc, &fractol) == 0)
 		{
 			write(2, "Usage: ./fractol mandelbrot\n.", 30);
-			write(2, "/fractol julia <RealPart> <ImagPart>", 37);
-			write(2, "/fractol burningship",21);
+			write(2, "/fractol julia <RealPart> <ImagPart>\n", 38);
+			write(2, "/fractol burningship\n", 22);
 			exit(1);
 		}
 		check_mlx(&fractol);
@@ -103,8 +103,8 @@ int	main(int argc, char *argv[])
 	else
 	{
 		write(2, "Usage: ./fractol mandelbrot\n.", 30);
-		write(2, "/fractol julia <RealPart> <ImagPart>", 37);
-		write(2, "/fractol burningship",21);
+		write(2, "/fractol julia <RealPart> <ImagPart>\n", 38);
+		write(2, "/fractol burningship\n", 22);
 	}
 	return (0);
 }
